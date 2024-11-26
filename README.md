@@ -23,17 +23,19 @@ The architecture is modular by design and allows organizations to start small wi
 ## Deploy Data Product End to End Implementation
 
 Following are the ARM templates
-1- Deploy Resouce Template [CreateResource.zip](https://github.com/user-attachments/files/17916880/CreateResource.zip)
-2- Deploy Account Template [CreateAccount.zip](https://github.com/user-attachments/files/17916887/CreateAccount.zip)
-3- Deploy Azure Database Template [CreateDatabase.zip](https://github.com/user-attachments/files/17916891/CreateDatabase.zip)
-4- Deploy Azure Datalake Template [DataLake.zip](https://github.com/user-attachments/files/17916899/DataLake.zip)
-5- Deploy Data Factory Template [DataFactory.zip](https://github.com/user-attachments/files/17916903/DataFactory.zip)
-6- Deploy Synapse Template [SnapseAnalytics.zip](https://github.com/user-attachments/files/17916910/SnapseAnalytics.zip)
-7- Deploy Stream Template[AzureStream.zip](https://github.com/user-attachments/files/17916911/AzureStream.zip)
-8- Deploy Montoring Template[MonitoringBencmarkSQL.zip](https://github.com/user-attachments/files/17916917/MonitoringBencmarkSQL.zip)
+1. *Deploy Resouce Template* [CreateResource.zip](https://github.com/user-attachments/files/17916880/CreateResource.zip)
+2. *Deploy Account Template* [CreateAccount.zip](https://github.com/user-attachments/files/17916887/CreateAccount.zip)
+3. *Deploy Azure Database Template* [CreateDatabase.zip](https://github.com/user-attachments/files/17916891/CreateDatabase.zip)
+4. *Deploy Azure Datalake Template* [DataLake.zip](https://github.com/user-attachments/files/17916899/DataLake.zip)
+5. *Deploy Data Factory Template* [DataFactory.zip](https://github.com/user-attachments/files/17916903/DataFactory.zip)
+6. *Deploy Synapse Template* [SnapseAnalytics.zip](https://github.com/user-attachments/files/17916910/SnapseAnalytics.zip)
+7. *Deploy Stream Template* [AzureStream.zip](https://github.com/user-attachments/files/17916911/AzureStream.zip)
+8. *Deploy Montoring Template* [MonitoringBencmarkSQL.zip](https://github.com/user-attachments/files/17916917/MonitoringBencmarkSQL.zip)
 
 Following can be created using CLI command in Azure
+---
 9- Create App Service
+---
 # Create an app service plan
 az appservice plan create -n <plan_name> --g <resource_group>
 
@@ -64,23 +66,37 @@ az apim create -n <apim_name> -l <location> `
     --publisher-name <publisher_name> `
     --sku-name Consumption
     
-    
+---    
 # create apim api
+---
 az apim api create -api-id <name> -g <group> --display-name <name> --path <path> --service-name <service_name>
 
-##Following is the visual implementation of the code 
+---
+Following is the visual implementation of the code 
+---
 
 #Resouce group snapshot 
-Following is the snapshot of the resource group after implementing all the key components of the architecture
+
+
+Following is the snapshot of the *resource group* created as part of the research practical implementation after implementing all the key components of the architecture
+
 ![image](https://github.com/user-attachments/assets/3d72ac3f-9818-46f5-b210-97cdfe6782d0)
 
-#Azure Purview of Governance 
+#*Azure Purview* of Governanc. This is the component implemented to embed governance within the data product
+
 ![image](https://github.com/user-attachments/assets/1a1404bc-9a38-4799-9780-354d0f0b18a4)
 
-#Azure Data Factory reponsible to bring data from Azure Data base siloed tables into lake into common data product model of customer
+
+
+#*Azure Data Factory* reponsible to bring data from Azure Data base siloed tables into lake into common data product model of customer
+
 ![image](https://github.com/user-attachments/assets/1bf5dfae-58ba-4c1d-846b-f6b70d32bade)
 
-#Azure Data Product
+
+
+#*Azure Data Product* visualisation in Synapse Analytics where it will be available to any underlying BIAN service for consumption or for reporting via Azure API
+
+
 ![image](https://github.com/user-attachments/assets/0fcc90d3-da68-4f76-917d-d5e794ebc4c3)
 
 
